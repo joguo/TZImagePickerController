@@ -10,5 +10,5 @@ Pod::Spec.new do |s|
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
   s.author             = { "banchichen" => "tanzhenios@foxmail.com" }
   s.source       = { :git => "https://github.com/joguo/TZImagePickerController.git", :tag => "#{s.version}" }
-  s.source_files  = "TZImagePickerController/TZImagePickerController/**/*.{h,m}"
+  s.source_files  = "TZImagePickerController/TZImagePickerController/TZImagePickerController/**/*.{h,m}"
 end
