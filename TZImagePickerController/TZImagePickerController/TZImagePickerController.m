@@ -65,6 +65,11 @@
     if (self.needShowStatusBar) [UIApplication sharedApplication].statusBarHidden = NO;
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return self.statusBarType == StatusBarTypeHidden;
+}
+
 - (void)setNaviBgColor:(UIColor *)naviBgColor {
     _naviBgColor = naviBgColor;
     self.navigationBar.barTintColor = naviBgColor;
@@ -715,6 +720,12 @@
     }
     
     [self configTableView];
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    TZImagePickerController *tzImagePickerVc = (TZImagePickerController *)self.navigationController;
+    return tzImagePickerVc.statusBarType == StatusBarTypeHidden;
 }
 
 - (void)configTableView {

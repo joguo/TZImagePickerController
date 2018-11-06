@@ -57,6 +57,12 @@
     [UIApplication sharedApplication].statusBarStyle = _originStatusBarStyle;
 }
 
+-(BOOL)prefersStatusBarHidden
+{
+    TZImagePickerController *tzImagePickerVc = (TZImagePickerController *)self.navigationController;
+    return tzImagePickerVc.statusBarType == StatusBarTypeHidden;
+}
+
 - (void)configMoviePlayer {
     [[TZImageManager manager] getPhotoWithAsset:_model.asset completion:^(UIImage *photo, NSDictionary *info, BOOL isDegraded) {
         if (!isDegraded && photo) {

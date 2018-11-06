@@ -142,7 +142,8 @@ static CGFloat itemMargin = 5;
 }
 
 - (BOOL)prefersStatusBarHidden {
-    return NO;
+    TZImagePickerController *tzImagePickerVc = (TZImagePickerController *)self.navigationController;
+    return tzImagePickerVc.statusBarType == StatusBarTypeHidden;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

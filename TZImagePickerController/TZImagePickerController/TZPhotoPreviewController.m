@@ -95,7 +95,8 @@
 }
 
 - (BOOL)prefersStatusBarHidden {
-    return YES;
+    TZImagePickerController *tzImagePickerVc = (TZImagePickerController *)self.navigationController;
+    return tzImagePickerVc.statusBarType != StatusBarTypeShow;
 }
 
 - (void)configCustomNaviBar {

@@ -104,6 +104,12 @@
     return [super preferredStatusBarStyle];
 }
 
+-(BOOL)prefersStatusBarHidden
+{
+    TZImagePickerController *tzImagePickerVc = (TZImagePickerController *)self.navigationController;
+    return tzImagePickerVc.statusBarType == StatusBarTypeHidden;
+}
+
 #pragma mark - Layout
 
 - (void)viewDidLayoutSubviews {
